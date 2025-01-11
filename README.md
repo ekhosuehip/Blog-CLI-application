@@ -9,3 +9,32 @@
 - **Delete Blog Posts**: Remove unwanted blog posts.
 - **User Personalization**: The application greets the user by their name.
 - **Timestamps**: Blog posts include the date and time of creation.
+
+## Requirements
+
+- Node.js (v14 or later) installed on your system.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/ekhosuehip/Blog-CLI-application.git
+   cd Blog-CLI-application
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+   Ensure you have `inquirer` installed, as it's required for the interactive prompts. The installation command will handle this automatically.
+
+3. Link the CLI application globally:
+
+   ```bash
+   npm link
+   ```
+
+   This will allow you to use the `blog` command globally on your system.
