@@ -51,3 +51,7 @@
 
    - Enter your name.
    - Create, read, list, or delete blog posts.
+
+## Dependencies
+
+- [Inquirer.js](https://www.npmjs.com/package/inquirer): A library for creating interactive CLI prompts.
