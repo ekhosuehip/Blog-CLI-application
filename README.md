@@ -38,3 +38,16 @@
    ```
 
    This will allow you to use the `blog` command globally on your system.
+
+## Usage
+
+1. Run the application using the `blogpost` command:
+
+   ```bash
+   npx blogpost
+   ```
+
+2. Follow the interactive prompts to:
+
+   - Enter your name.
+   - Create, read, list, or delete blog posts.
