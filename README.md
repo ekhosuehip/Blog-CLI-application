@@ -9,3 +9,7 @@
 - **Delete Blog Posts**: Remove unwanted blog posts.
 - **User Personalization**: The application greets the user by their name.
 - **Timestamps**: Blog posts include the date and time of creation.
+
+## Requirements
+
+- Node.js (v14 or later) installed on your system.
