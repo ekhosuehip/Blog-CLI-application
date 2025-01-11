@@ -55,3 +55,13 @@
 ## Dependencies
 
 - [Inquirer.js](https://www.npmjs.com/package/inquirer): A library for creating interactive CLI prompts.
+
+## Example
+
+- To create a new blog post:
+  - Select "Create a new blog post" from the menu.
+  - Enter the title and content for your blog.
+
+- To read a blog post:
+  - Select "Read a blog" from the menu.
+  - Choose the blog post you want to read.
