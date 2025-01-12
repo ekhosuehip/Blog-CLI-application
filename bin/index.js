@@ -113,3 +113,28 @@ const listBlogPosts = () => {
   displayMenu();
 };
 
+// Read a Blog Post
+
+const readBlogPost = () => {
+  const files = fs.readdirSync(blogDir);
+
+  if (files.length === 0) {
+    console.log('No blog found.');
+    return displayMenu();
+  }
+
+  inquirer
+    .prompt([
+      {
+        type: 'list',
+        name: 'post',
+        message: 'Select a blog post to read:',
+        choices: files.map((file) => file.replace('.txt', '')),
+      },
+    ])
+    .then((answers) => {
+      const content = fs.readFileSync(path.join(blogDir, `${answers.post.toLowerCase().replace(/\s+/g, '-')}.txt`), 'utf8');
+      console.log(`\n--- ${answers.post} ---\n${content}\n`);
+      displayMenu();
+    });
+};
