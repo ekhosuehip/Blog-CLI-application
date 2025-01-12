@@ -33,3 +33,40 @@ const askForUserName = async () => {
   console.log(`\nHello, ${userName}! Welcome to Blog CLI.`);
   displayMenu();
 };
+
+//Menu Options
+
+const displayMenu = async () => {
+  const answers = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'action',
+      message: `What would you like to do, ${userName}?`,
+      choices: [
+        'Create a new blog post',
+        'List all blog',
+        'Read a blog',
+        'Delete a blog',
+        'Exit',
+      ],
+    },
+  ]);
+
+  switch (answers.action) {
+    case 'Create a new blog post':
+      createBlogPost();
+      break;
+    case 'List all blog':
+      listBlogPosts();
+      break;
+    case 'Read a blog':
+      readBlogPost();
+      break;
+    case 'Delete a blog':
+      deleteBlogPost();
+      break;
+    case 'Exit':
+      console.log(`Goodbye ${userName}!`);
+      break;
+  }
+};
