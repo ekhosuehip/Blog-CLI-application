@@ -138,3 +138,33 @@ const readBlogPost = () => {
       displayMenu();
     });
 };
+
+// Delete a Blog Post
+
+const deleteBlogPost = () => {
+  const files = fs.readdirSync(blogDir);
+
+  if (files.length === 0) {
+    console.log('No blog found.');
+    return displayMenu();
+  }
+
+  inquirer
+    .prompt([
+      {
+        type: 'list',
+        name: 'post',
+        message: 'Select a blog post to delete:',
+        choices: files.map((file) => file.replace('.txt', '')),
+      },
+    ])
+    .then((answers) => {
+      const fileToDelete = path.join(blogDir, `${answers.post.toLowerCase().replace(/\s+/g, '-')}.txt`);
+      
+      // Delete the selected blog post
+      fs.unlinkSync(fileToDelete);
+      console.log(`Blog post '${answers.post}' deleted successfully!`);
+      displayMenu();
+    });
+};
+
