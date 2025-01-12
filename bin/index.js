@@ -15,3 +15,21 @@ const blogDir = path.resolve(__dirname, 'blogs');
 if (!fs.existsSync(blogDir)) {
   fs.mkdirSync(blogDir);
 }
+
+let userName = '';
+
+// Prompt for the user's name
+ 
+const askForUserName = async () => {
+  const answers = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: 'Enter your name?',
+    },
+  ]);
+
+  userName = answers.name;
+  console.log(`\nHello, ${userName}! Welcome to Blog CLI.`);
+  displayMenu();
+};
