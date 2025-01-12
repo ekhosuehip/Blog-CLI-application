@@ -97,3 +97,19 @@ const createBlogPost = async () => {
   console.log(`Blog post '${answers.title}' saved successfully at ${timestamp}!`);
   displayMenu();
 };
+
+// List All Blog Posts
+
+const listBlogPosts = () => {
+  const files = fs.readdirSync(blogDir);
+
+  if (files.length === 0) {
+    console.log('No blog found.');
+  } else {
+    console.log('Your Blog Posts:');
+    files.forEach((file, index) => console.log(`${index + 1}. ${file.replace('.txt', '')}`));
+  }
+
+  displayMenu();
+};
+
