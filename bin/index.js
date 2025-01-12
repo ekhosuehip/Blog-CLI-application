@@ -70,3 +70,30 @@ const displayMenu = async () => {
       break;
   }
 };
+
+// Create a New Blog Post 
+
+const createBlogPost = async () => {
+  const answers = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'title',
+      message: 'Enter the title of your blog post:',
+    },
+    {
+      type: 'input',
+      name: 'content',
+      message: 'Write your blog content:',
+    },
+  ]);
+
+  const timestamp = new Date().toLocaleString(); 
+  const filename = `${answers.title.toLowerCase().replace(/\s+/g, '-')}.txt`;
+  const filepath = path.join(blogDir, filename);
+
+  
+  const blogContent = `Title: ${answers.title}\nCreated At: ${timestamp}\n\n${answers.content}`;
+  fs.writeFileSync(filepath, blogContent, 'utf8');
+  console.log(`Blog post '${answers.title}' saved successfully at ${timestamp}!`);
+  displayMenu();
+};
