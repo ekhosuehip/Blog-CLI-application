@@ -168,3 +168,11 @@ const deleteBlogPost = () => {
     });
 };
 
+// Main Function
+
+const main = () => {
+  askForUserName(); 
+};
+
+main();
+
